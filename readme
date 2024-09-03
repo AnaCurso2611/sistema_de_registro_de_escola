@@ -1,0 +1,95 @@
+Desenvolva um sistema de banco de dados para gerenciar informações sobre alunos, cursos e notas em um sistema escolar. O banco de dados deve permitir a administração eficiente de informações acadêmicas, incluindo detalhes sobre alunos, cursos oferecidos e notas atribuídas.
+
+Requisitos:
+
+Criação do Banco de Dados:
+
+Nome do banco de dados: SistemaEscolar.
+Criação das Tabelas:
+
+Tabela alunos: Armazena informações sobre os alunos.
+alunoID (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome (VARCHAR(100), NOT NULL)
+dataNascimento (DATE)
+email (VARCHAR(100), UNIQUE)
+telefone (VARCHAR(20))
+Tabela cursos: Armazena informações sobre os cursos.
+cursoID (INT, AUTO_INCREMENT, PRIMARY KEY)
+nome (VARCHAR(100), NOT NULL)
+descricao (TEXT)
+Tabela notas: Registra as notas dos alunos em cursos.
+notaID (INT, AUTO_INCREMENT, PRIMARY KEY)
+alunoID (INT, FOREIGN KEY para alunos(alunoID))
+cursoID (INT, FOREIGN KEY para cursos(cursoID))
+nota (DECIMAL(5,2) CHECK (nota BETWEEN 0 AND 10))
+dataNota (DATE NOT NULL CHECK (dataNota <= CURDATE()))
+Inserção de Dados:
+
+Insira pelo menos 3 registros na tabela alunos.
+Insira pelo menos 3 registros na tabela cursos.
+Insira pelo menos 5 registros na tabela notas.
+Consultas e Relatórios:
+
+Exiba todos os alunos.
+Exiba todos os cursos.
+Exiba todas as notas, incluindo detalhes do aluno e do curso.
+Objetivo:
+
+Garantir que o banco de dados seja capaz de armazenar, consultar e manipular informações sobre alunos, cursos e notas de forma eficaz.
+# Sistema de Gerenciamento Escolar
+
+Este projeto é um sistema de banco de dados desenvolvido para gerenciar informações de alunos, cursos e notas em um ambiente escolar.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `SistemaEscolar` contém as seguintes tabelas:
+
+1. **Tabela `alunos`:**
+   - `alunoID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `dataNascimento` (DATE)
+   - `email` (VARCHAR(100), UNIQUE)
+   - `telefone` (VARCHAR(20))
+
+2. **Tabela `cursos`:**
+   - `cursoID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `nome` (VARCHAR(100), NOT NULL)
+   - `descricao` (TEXT)
+
+3. **Tabela `notas`:**
+   - `notaID` (INT, AUTO_INCREMENT, PRIMARY KEY)
+   - `alunoID` (INT, FOREIGN KEY para `alunos(alunoID)`)
+   - `cursoID` (INT, FOREIGN KEY para `cursos(cursoID)`)
+   - `nota` (DECIMAL(5,2) CHECK (nota BETWEEN 0 AND 10))
+   - `dataNota` (DATE NOT NULL CHECK (dataNota <= CURDATE()))
+
+## Instruções de Uso
+
+1. **Criação do Banco de Dados e Tabelas:**
+   - Execute o script SQL `create_tables.sql` para criar o banco de dados e as tabelas necessárias.
+
+2. **Inserção de Dados:**
+   - Use o script `insert_data.sql` para inserir dados de exemplo nas tabelas.
+
+3. **Consultas e Relatórios:**
+   - Execute as consultas SQL fornecidas para obter relatórios e visualizar os dados armazenados.
+
+## Arquivos
+
+- `create_tables.sql`: Script SQL para criar o banco de dados e tabelas.
+- `insert_data.sql`: Script SQL para inserir dados de exemplo.
+- `queries.sql`: Script SQL com consultas para visualizar os dados.
+
+## Requisitos
+
+- MySQL ou MariaDB para executar os scripts SQL.
+- Cliente SQL para interação com o banco de dados.
+
+## Contribuições
+
+Se desejar contribuir com melhorias ou correções, por favor, envie um pull request ou abra uma issue.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
